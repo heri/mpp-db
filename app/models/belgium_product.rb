@@ -1,0 +1,3 @@
+class BelgiumProduct < ApplicationRecord
+end
+  

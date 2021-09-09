@@ -1,0 +1,3 @@
+class NetherlandsUserProduct < ApplicationRecord
+end
+  

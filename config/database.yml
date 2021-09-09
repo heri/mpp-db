@@ -1,0 +1,60 @@
+# SQLite. Versions 3.8.0 and up are supported.
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+#
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: 
+  database: 
+  username: 
+  password: 
+  
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: db/test.sqlite3
+
+production:
+  <<: *default
+  database: db/production.sqlite3
+
+# For requests after 1st Nov 2020
+
+# - requests per user
+
+#   {"ai-canada"=>6807, "Anonymous"=>379, "belgium"=>33, "community"=>7898, "e-commerce"=>5551883, "heyday01"=>1, "Invalid Token"=>161, "netherlands-e-comm"=>130, "salesforce"=>3372} 
+
+# - belgium requests 
+
+# endpoints: "/api/belgium/useremailrecommendation/"
+
+# - community requests
+
+#   100 to 500 requests 
+#   endpoints: "/api/v2/mostpopularproduct/"
+
+# - e-commerce requests 
+
+#   median number of requests per day : 163309
+
+#   endpoints:  {"/api/crossselling/"=>1254177, "/api/mostpopularproduct/"=>130, "/api/recoproduct/"=>3038535, "/api/similaritems/"=>1254686, "/api/suggestedproducts/"=>4, "/api/suggestedsports/"=>235, "/api/v2/mostpopularproduct/"=>4983, "/api/v2/mostpopularproduct/month/pop/"=>58} 
+
+# - netherlands-e-com
+
+#   Requests made on "/api/netherlands/useremailrecommendation/" . Last request was 17 Nov
+
+# - salesforce
+
+#   mediam requests per day
+#   endpoints: 224 "/api/useremailrecommendation/"
