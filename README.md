@@ -30,3 +30,7 @@ Delete old access logs
 
 Get similar items for product "8674323"
 > SimilarItem.where(dsm_code_ref: "8674323")
+
+## Who is behind this
+
+Heri is a software engineer, photographer, father and Montréaler. Building in the open — see more projects at [studiozenkai.com](https://studiozenkai.com).
